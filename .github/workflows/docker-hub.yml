@@ -23,11 +23,8 @@ jobs:
 
     - name: Build and Push Docker Image
       run: |
-        docker buildx create --use
-        docker buildx inspect --bootstrap
-        docker buildx build --platform linux/amd64,linux/arm64 -t ${{secrets.DOCKER_USERNAME}}/free-wheel:v2 -t ${{secrets.DOCKER_USERNAME}}/free-wheel:{{ github.sha }} .
-        docker buildx use default
-        docker push ${{secrets.DOCKER_USERNAME}}/free-wheel:v2
-        docker push ${{secrets.DOCKER_USERNAME}}/free-wheel:{{ github.sha }}
+        docker image build -t free-wheel:v2
+        docker image tag free-wheel:v2 ${{ secrets.DOCKER_USERNAME}}/free-wheel:v2
+        docker image push ${{ secrets.DOCKER_USERNAME}}/free-wheel:v2
     - name: Logout from Docker Hub
       run: docker logout

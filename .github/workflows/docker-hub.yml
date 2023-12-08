@@ -23,8 +23,8 @@ jobs:
 
     - name: Build and Push Docker Image
       run: |
-        docker image build -t gooberVille:v2 .
-        docker image tag gooberVille:v2 ${{ secrets.DOCKER_USERNAME}}/gooberVille:v2
-        docker image push ${{ secrets.DOCKER_USERNAME}}/gooberVille:v2
+        docker image build -t gooberville:v2 .
+        docker image tag gooberville:v2 ${{ secrets.DOCKER_USERNAME}}/gooberville:v2
+        docker image push ${{ secrets.DOCKER_USERNAME}}/gooberville:v2
     - name: Logout from Docker Hub
       run: docker logout

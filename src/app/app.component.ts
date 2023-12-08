@@ -6,16 +6,18 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit{
-  title = 'gooberVille';
-  
-  constructor(private http: HttpClient) {}
+export class AppComponent {
 
-  ngOnInit() {
-    this.http.get('https://jsonplaceholder.typicode.com/todos/1').subscribe(
-      (response) => {
-        console.log(response, 'test test 123');
-      }
-    )
+  public randomizedString:string = "";
+  public randomizedStringList:string[] = [];
+  
+  public execRandomizer(inputString:string):void {
+    const randomizedString = inputString.split('').map((char) => {
+      const shouldCapitalize = Math.random() < 0.5;
+
+      return shouldCapitalize ? char.toLocaleUpperCase() : char.toLowerCase();
+    }).join('');
+
+    this.randomizedStringList.push(randomizedString);
   }
 }

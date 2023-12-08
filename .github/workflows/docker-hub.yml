@@ -23,8 +23,8 @@ jobs:
 
     - name: Build and Push Docker Image
       run: |
-        docker image build -t free-wheel:v2 .
-        docker image tag free-wheel:v2 ${{ secrets.DOCKER_USERNAME}}/free-wheel:v2
-        docker image push ${{ secrets.DOCKER_USERNAME}}/free-wheel:v2
+        docker image build -t Gooberville:v2 .
+        docker image tag Gooberville:v2 ${{ secrets.DOCKER_USERNAME}}/Gooberville:v2
+        docker image push ${{ secrets.DOCKER_USERNAME}}/Gooberville:v2
     - name: Logout from Docker Hub
       run: docker logout

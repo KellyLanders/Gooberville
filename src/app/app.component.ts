@@ -11,7 +11,7 @@ export class AppComponent {
   public randomizedString:string = "";
   public randomizedStringList:string[] = [];
   
-  public execRandomizer(inputString:string):void {
+  public execRandomizer(inputString:string):string {
     const randomizedString = inputString.split('').map((char) => {
       const shouldCapitalize = Math.random() < 0.5;
 
@@ -19,5 +19,7 @@ export class AppComponent {
     }).join('');
 
     this.randomizedStringList.push(randomizedString);
+
+    return randomizedString;
   }
 }

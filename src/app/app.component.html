@@ -1,6 +1,6 @@
 <div class="header-container text-center margin-top-20">
     <h1>Gooberville</h1>
-    <h2>To further nudge us to the unavoidable meltdown.</h2>
+    <h2>To further nudge us to the meltdown.</h2>
 </div>
 
 <div class="flex-container input-wrapper margin-top-20">
@@ -10,11 +10,11 @@
                 <div>
                     <mat-form-field class="example-full-width">
                         <mat-label>Enter phrase here</mat-label>
-                        <input matInput #inputString name="inputString"/>
+                        <input matInput #inputString name="inputString" [(ngModel)]="randomizedString" (input)="updateButtonState()"/>
                     </mat-form-field>
                 </div>
                 <div>
-                    <button mat-raised-button color="primary" (click)="execRandomizer(inputString.value)">Randomize it!</button>
+                    <button mat-raised-button color="primary" [disabled]="!randomizedString" (click)="execRandomizer(inputString.value)">Randomize it!</button>
                 </div>
             </form>        
         </mat-card-content>
@@ -22,7 +22,7 @@
 </div>
 
 <div class="flex-container output-wrapper margin-top-20" *ngIf="randomizedStringList.length > 0">
-    <mat-card>
-        <mat-card-content *ngFor="let phrase of randomizedStringList">{{phrase}}</mat-card-content>
+    <mat-card  *ngFor="let phrase of randomizedStringList">
+        <mat-card-content>{{phrase}}</mat-card-content>
     </mat-card>
 </div>

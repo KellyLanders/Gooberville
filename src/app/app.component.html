@@ -22,7 +22,8 @@
 </div>
 
 <div class="flex-container output-wrapper margin-top-20" *ngIf="randomizedStringList.length > 0">
-    <mat-card  *ngFor="let phrase of randomizedStringList">
+    <mat-card *ngFor="let phrase of randomizedStringList">
         <mat-card-content>{{phrase}}</mat-card-content>
+        <img class="ripple" src="../assets/icons/clipboard.png" alt="small image of a clipboard, informing the user they can copy something to a clipboard" (click)="copyToClipboard(phrase)">
     </mat-card>
 </div>

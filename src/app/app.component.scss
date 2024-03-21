@@ -6,15 +6,39 @@
     display: flex;
     justify-content: center;
 
+    .input-wrapper {
+        text-align: center;
+    }
+
     mat-card {
+        display: flex;
         margin: 10px;
+
+        mat-card-content {
+            position: relative;
+            top: 6px;
+        }
+
+        img {
+            height: 30px;
+            margin-left: 30px;
+        }
+
+        /* Ripple effect */
+        .ripple {
+            background-position: center;
+            transition: background 0.8s;
+        }
+        .ripple:active {
+            background-color: black;
+            background-size: 100%;
+            transition: background 0s;
+        }
     }
 }
 
-.input-wrapper {
-    text-align: center;
-}
 
+// Utility classes
 .text-center {
     text-align: center;
 }

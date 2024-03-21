@@ -1,5 +1,6 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Clipboard } from '@angular/cdk/clipboard';
+
 
 @Component({
   selector: 'app-root',
@@ -7,6 +8,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+
+  constructor(private clipboard: Clipboard) {
+
+  }
 
   public randomizedString:string = "";
   public randomizedStringList:string[] = [];
@@ -31,5 +36,9 @@ export class AppComponent {
     } else {
       return true;
     }
+  }
+
+  public copyToClipboard(goober: string) {
+    this.clipboard.copy(goober);
   }
 }

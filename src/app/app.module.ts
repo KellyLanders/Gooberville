@@ -8,6 +8,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
+import { MatRippleModule } from '@angular/material/core';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule } from '@angular/forms';
 import { ClipboardModule } from '@angular/cdk/clipboard';
@@ -25,6 +26,7 @@ import { ClipboardModule } from '@angular/cdk/clipboard';
     MatCardModule,
     MatButtonModule,
     MatInputModule,
+    MatRippleModule,
     MatFormFieldModule,
     FormsModule,
     ClipboardModule

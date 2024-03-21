@@ -9,6 +9,8 @@ import { Clipboard } from '@angular/cdk/clipboard';
 })
 export class AppComponent {
 
+  centered:boolean = true;
+
   constructor(private clipboard: Clipboard) {
 
   }

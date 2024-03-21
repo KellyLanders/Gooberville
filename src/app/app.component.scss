@@ -17,22 +17,11 @@
         mat-card-content {
             position: relative;
             top: 6px;
+            margin-right: 20px;
         }
 
         img {
             height: 30px;
-            margin-left: 30px;
-        }
-
-        /* Ripple effect */
-        .ripple {
-            background-position: center;
-            transition: background 0.8s;
-        }
-        .ripple:active {
-            background-color: black;
-            background-size: 100%;
-            transition: background 0s;
         }
     }
 }
